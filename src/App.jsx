@@ -3,7 +3,7 @@ import ThemeToggle from "./components/ThemeToggle";
 
 function App() {
   return (
-    <div className="w-full h-96 dark:bg-dark-1">
+    <div className="app w-full h-96 dark:bg-dark-1">
       <ThemeToggle />
       <CanvasModel />
     </div>

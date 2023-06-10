@@ -15,18 +15,17 @@ const ThemeToggle = () => {
     setTheme(colorTheme);
     setDarkSide(checked);
     state.darkMode = checked;
-    console.log(checked);
   };
 
   return (
-    <>
+    <div className="home">
       <DarkModeSwitch
         style={{ marginBottom: "2rem" }}
         checked={darkSide}
         onChange={toggleDarkMode}
         size={30}
       />
-    </>
+    </div>
   );
 };
 

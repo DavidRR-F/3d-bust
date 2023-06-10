@@ -23,7 +23,7 @@ const CanvasModel = () => {
         position={[0, 25, 0]}
         castShadow
       /> */}
-      <Environment preset="city" background blur={2} />
+      <Environment preset="city" blur={2} />
       <Backdrop />
       {/* position={[0, -20, -31]}
         rotation={[-Math.PI / 2, Math.PI / 1, Math.PI / 1]}

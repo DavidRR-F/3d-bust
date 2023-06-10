@@ -5,12 +5,14 @@ import { useFrame } from "@react-three/fiber";
 import { useGLTF } from "@react-three/drei";
 import state from "../state";
 
-const Object = (props) => {
+const Object = () => {
   const snap = useSnapshot(state);
-  const ref = useRef();
   const { nodes, materials } = useGLTF("/woman_bust_2.glb");
   const rotation = [-Math.PI / 2, Math.PI / 1, Math.PI / 1];
   const potition = [0, 0, 0];
+  const scale = 0.9;
+  console.log("Nodes", nodes);
+  console.log("Material", materials);
 
   useFrame((state, delta) => {
     easing.dampC(
@@ -26,13 +28,18 @@ const Object = (props) => {
     <group key={stateString}>
       <mesh
         castShadow
-        receiveShadow
         geometry={nodes.veiledVirgin_tris.geometry}
         material={materials.mia_material_x1SG}
+        material-metalness={0.2}
         rotation={rotation}
         position={potition}
-        {...props}
-      ></mesh>
+        scale={scale}
+      >
+        {/* <meshStandardMaterial
+          attach="material"
+          map={nodes.veiledVirgin_tris.material.map} // Use the texture image
+        /> */}
+      </mesh>
     </group>
   );
 };
