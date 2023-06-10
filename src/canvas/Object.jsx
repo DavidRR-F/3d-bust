@@ -10,7 +10,7 @@ const Object = () => {
   const { nodes, materials } = useGLTF("/woman_bust_2.glb");
   const rotation = [-Math.PI / 2, Math.PI / 1, Math.PI / 1];
   const potition = [0, 0, 0];
-  const scale = 0.9;
+  const scale = 0.8;
   console.log("Nodes", nodes);
   console.log("Material", materials);
 
@@ -30,7 +30,6 @@ const Object = () => {
         castShadow
         geometry={nodes.veiledVirgin_tris.geometry}
         material={materials.mia_material_x1SG}
-        material-metalness={0.2}
         rotation={rotation}
         position={potition}
         scale={scale}

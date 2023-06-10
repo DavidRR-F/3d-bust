@@ -1,5 +1,5 @@
 import { Canvas } from "@react-three/fiber";
-import { Environment, Center } from "@react-three/drei";
+import { Environment, Center, OrbitControls } from "@react-three/drei";
 import CameraRig from "./CameraRig";
 import Backdrop from "./Backdrop";
 import React from "react";
@@ -15,31 +15,14 @@ const CanvasModel = () => {
       gl={{ preserveDrawingBuffer: true }}
       className="w-full max-w-full h-full transition-all ease-in"
     >
-      <ambientLight intensity={0.4} />
-      {/* <spotLight
-        intensity={0.8}
-        angle={0.2}
-        penumbra={10}
-        position={[0, 25, 0]}
-        castShadow
-      /> */}
-      <Environment preset="city" blur={2} />
-      <Backdrop />
-      {/* position={[0, -20, -31]}
-        rotation={[-Math.PI / 2, Math.PI / 1, Math.PI / 1]}
-        scale={0.5} */}
-      {/* <ContactShadows
-        resolution={512}
-        position={[0, 0, 0]}
-        opacity={1}
-        scale={1}
-        blur={2}
-        far={0.4}
-      /> */}
+      <hemisphereLight color="white" groundColor="blue" intensity={0.75} />
+      <spotLight position={[50, 50, 10]} angle={0.15} penumbra={1} />
       <CameraRig>
         <Center>
           <Object />
+          <ContactShadows scale={40} blur={10} far={20} />
         </Center>
+        <OrbitControls />
       </CameraRig>
     </Canvas>
   );
