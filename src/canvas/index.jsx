@@ -1,10 +1,9 @@
 import { Canvas } from "@react-three/fiber";
 import { Environment, Center, OrbitControls } from "@react-three/drei";
 import CameraRig from "./CameraRig";
-import Backdrop from "./Backdrop";
 import React from "react";
 import Object from "./Object";
-import { ContactShadows, RandomizedLight } from "@react-three/drei";
+import { ContactShadows } from "@react-three/drei";
 
 const CanvasModel = () => {
   return (

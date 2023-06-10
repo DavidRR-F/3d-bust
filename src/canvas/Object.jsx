@@ -20,7 +20,7 @@ const Object = () => {
       materials.mia_material_x1SG.color,
       snap.darkMode ? snap.colorDark : snap.colorLight,
       delta
-    ); // Modify the color based on the state or variables
+    );
   });
 
   const stateString = JSON.stringify(snap);
@@ -34,12 +34,7 @@ const Object = () => {
         rotation={rotation}
         position={potition}
         scale={scale}
-      >
-        {/* <meshStandardMaterial
-          attach="material"
-          map={nodes.veiledVirgin_tris.material.map} // Use the texture image
-        /> */}
-      </mesh>
+      ></mesh>
     </group>
   );
 };
