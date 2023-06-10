@@ -18,7 +18,7 @@ const ThemeToggle = () => {
   };
 
   return (
-    <div className="home">
+    <div className="toggle">
       <DarkModeSwitch
         style={{ marginBottom: "2rem" }}
         checked={darkSide}
