@@ -5,7 +5,7 @@ import { useFrame } from "@react-three/fiber";
 import { useGLTF } from "@react-three/drei";
 import state from "../state";
 
-const Object = () => {
+const Object = (props) => {
   const snap = useSnapshot(state);
   const { nodes, materials } = useGLTF("/woman_bust.glb");
   console.log(nodes);
@@ -20,10 +20,12 @@ const Object = () => {
     <group key={stateString}>
       <mesh
         castShadow
+        receiveShadow
         geometry={nodes.veiledVirgin_tris.geometry}
         material={materials.mia_material_x1SG}
         material-roughness={1}
         dispose={null}
+        {...props}
       ></mesh>
     </group>
   );
