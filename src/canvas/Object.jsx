@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { easing } from "maath";
 import { useSnapshot } from "valtio";
 import { useFrame } from "@react-three/fiber";
@@ -6,25 +6,20 @@ import { useGLTF } from "@react-three/drei";
 import state from "../state";
 
 const Object = (props) => {
-  const snap = useSnapshot(state);
-  const { nodes, materials } = useGLTF("/woman_bust.glb");
-  console.log(nodes);
-  console.log(materials);
-  useFrame((state, delta) => {
-    easing.dampC(materials.mia_material_x1SG.color, snap.color, delta);
-  });
-
-  const stateString = JSON.stringify(snap);
+  const ref = useRef();
+  const { nodes, materials } = useGLTF("/woman_bust_2.glb");
+  const rotation = [-Math.PI / 2, Math.PI / 1, Math.PI / 1];
+  const potition = [0, 0, 0];
 
   return (
-    <group key={stateString}>
+    <group key={ref}>
       <mesh
         castShadow
         receiveShadow
         geometry={nodes.veiledVirgin_tris.geometry}
         material={materials.mia_material_x1SG}
-        material-roughness={1}
-        dispose={null}
+        rotation={rotation}
+        position={potition}
         {...props}
       ></mesh>
     </group>
