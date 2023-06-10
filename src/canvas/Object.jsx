@@ -13,7 +13,8 @@ const Object = () => {
   const scale = 0.8;
   console.log("Nodes", nodes);
   console.log("Material", materials);
-
+  materials.mia_material_x1SG.metalness = 0.2;
+  materials.mia_material_x1SG.roughness = 0.3;
   useFrame((state, delta) => {
     easing.dampC(
       materials.mia_material_x1SG.color,
