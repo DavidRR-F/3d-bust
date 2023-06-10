@@ -36,11 +36,11 @@ const CanvasModel = () => {
         blur={2}
         far={0.4}
       /> */}
-      {/* <CameraRig> */}
-      <Center>
-        <Object />
-      </Center>
-      {/* </CameraRig> */}
+      <CameraRig>
+        <Center>
+          <Object />
+        </Center>
+      </CameraRig>
     </Canvas>
   );
 };

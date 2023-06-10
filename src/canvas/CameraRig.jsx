@@ -24,11 +24,11 @@ const CameraRig = ({ children }) => {
     //}
 
     // set model camera position
-    easing.damp3(state.camera.position, targetPosition, 0.25, delta);
-
-    const rotationY = -state.pointer.x / 24 + Math.PI / 2.3; // Modify this line for the desired rotation
-    const rotationZ = -state.pointer.y / 10; // Modify this line for the desired rotation
-    const rotationX = 6; // Modify this line for the desired rotation
+    //easing.damp3(state.camera.position, targetPosition, 0.25, delta);
+    // [-Math.PI / 2, Math.PI / 1, Math.PI / 1];
+    const rotationY = 0; // Modify this line for the desired rotation
+    const rotationZ = state.pointer.x / 10; // Modify this line for the desired rotation
+    const rotationX = 0; // Modify this line for the desired rotation
 
     easing.dampE(
       group.current.rotation,
